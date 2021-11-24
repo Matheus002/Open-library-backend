@@ -2,7 +2,9 @@ package com.api.library.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,11 +18,16 @@ public class Book implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	private String isbn;
 	private String name;
 	private String subject;
 	private String overview;
 	private String publisher;
-	private Date publicationDate;
+	private Date publicationDate;	
+	
+	private Set<BookItem> copies = new HashSet<>();
+	
+	private Author author;
 	
 	public Book() {
 		
