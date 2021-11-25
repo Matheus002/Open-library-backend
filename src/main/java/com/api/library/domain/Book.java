@@ -29,14 +29,13 @@ public class Book implements Serializable {
 	
 	private Author author;
 	
-	public Book() {
-		
-	}
+	public Book() {}
 
-	public Book(Long id, String name, String subject, String overview, String publisher, Date publicationDate) {
+	public Book(Long id, String isbn, String name, String subject, String overview, String publisher, Date publicationDate) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.isbn = isbn;
 		this.subject = subject;
 		this.overview = overview;
 		this.publisher = publisher;
@@ -89,6 +88,30 @@ public class Book implements Serializable {
 
 	public void setPublicationDate(Date publicationDate) {
 		this.publicationDate = publicationDate;
+	}
+	
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public Set<BookItem> getCopies() {
+		return copies;
+	}
+
+	public void setCopies(Set<BookItem> copies) {
+		this.copies = copies;
+	}
+
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
 	}
 
 	@Override
